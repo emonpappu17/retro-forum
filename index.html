@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Forum</title>
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body class="space-y-14 md:space-y-20">
+    <header class="container mx-auto space-y-5">
+        <!-- navbar -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3">
+                        <div class="tooltip" data-tip="Home">
+                            <button class="btn rounded-full border"><i class="fa-solid fa-house"></i></button>
+                        </div>
+                        <div class="tooltip" data-tip="Edit">
+                            <button class="btn rounded-full border"><i class="fa-solid fa-pen-fancy"></i></button>
+                        </div>
+                        <div class="tooltip" data-tip="Add">
+                            <button class="btn rounded-full border"><i class="fa-solid fa-user-plus"></i></button>
+                        </div>
+                        <div class="tooltip" data-tip="Flag">
+                            <button class="btn rounded-full border"><i class="fa-regular fa-flag"></i></button>
+                        </div>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-4xl font-bold">ReTro</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 space-x-4">
+                    <div class="tooltip" data-tip="Home">
+                        <button class="btn rounded-full border"><i class="fa-solid fa-house"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Edit">
+                        <button class="btn rounded-full border"><i class="fa-solid fa-pen-fancy"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Add">
+                        <button class="btn rounded-full border"><i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Flag">
+                        <button class="btn rounded-full border"><i class="fa-regular fa-flag"></i></button>
+                    </div>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <button class="bg-[#797DFC] py-3 px-9 rounded-[50px] text-white">Sign In</button>
+            </div>
+        </div>
+        <!-- banner -->
+        <section
+            class="bg-[url('images/bgbanner.png')] w-full bg-cover bg-[#12132D] md:p-28 p-16 rounded-3xl flex md:flex-row flex-col justify-between items-center gap-7">
+            <div class="space-y-5">
+                <h1 class="text-white text-5xl font-bold">Welcome to the<br><span
+                        class="bg-gradient-to-r from-[#797DFCFF] to-[#797DFC00] text-transparent bg-clip-text">ReTro</span>
+                    Forum</h1>
+                <p class="text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
+                <div class="bg-white flex justify-between w-fit rounded-full p-2 max-w-[400px]">
+                    <input id="input-field" type="text" placeholder="Search here anything" class="input w-full" />
+                    <button onclick="searchBtn()" class="btn px-7 text-white rounded-full bg-[#797DFC]">Search</button>
+                </div>
+            </div>
+            <div class="border bg-white p-8  rounded-3xl space-y-3">
+                <div class="flex justify-between gap-5">
+                    <span>Registered Users</span>
+                    <span>01</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Forum</span>
+                    <span>05</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Topics</span>
+                    <span>01</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Replies</span>
+                    <span>01</span>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="container mx-auto space-y-24">
+        <section>
+            <div class="text-center space-y-5 mb-10">
+                <h1 class="text-4xl font-bold">Let’s Discuss</h1>
+                <p>Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                    features allow for a streamlined .</p>
+            </div>
+            <!-- discuss container -->
+            <div class="flex justify-between gap-5">
+                <!-- left side -->
+                <div id="card-container" class="space-y-5 flex-1">
+                    <!-- demo card -->
+                    <!-- <div
+                        class="rounded-3xl flex p-10 gap-6 bg-[#F3F3F5] hover:bg-[#797DFC1A] hover:border-[#797DFC] hover:border">
+                        <div>
+                            <div class="avatar online">
+                                <div class="w-16 rounded-3xl">
+                                    <img src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-7">
+                                <p># <span>Music</span></p>
+                                <p>Author: <span>Limon</span></p>
+                            </div>
+                            <h1 class="text-xl font-semibold">10 Kids Unaware of Their Halloween Costume</h1>
+                            <p>It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s
+                                your prerogative</p>
+                            <hr class="border-dashed">
+                            <div class="flex justify-between">
+                                <div class="flex gap-5">
+                                    <div>
+                                        <i class="fa-regular fa-message"></i> <span>560</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-regular fa-eye"></i> <span>560</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-regular fa-clock"></i> <span>560</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="readItem(title, view)" class="btn btn-xs bg-[#10B981]"><i
+                                            class="fa-regular fa-envelope-open text-white"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- right side -->
+                <div id="right-side-container" class="bg-[#F3F3F5] p-6 rounded-3xl w-[400px] h-fit space-y-4">
+                    <div class="flex justify-between">
+                        <h3>Title</h3>
+                        <p><i class="fa-solid fa-check-double"></i> Mek as read (<span id="count">0</span>)</p>
+                    </div>
+                    <!-- <div id="read-container" class="p-4 flex items-center justify-between bg-white rounded-3xl">
+                        <h3>10 Kids Unaware of Their Halloween Costume</h3>
+                        <div class="flex items-center">
+                            <i class="fa-regular fa-eye"></i> <span>560</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <section
+            class="bg-[#12132D] pt-10 pr-6 flex flex-col  md:flex-row justify-between items-center rounded-3xl pl-16">
+            <div class="space-y-5">
+                <h1 class="text-5xl font-bold text-white">Join Our Forum</h1>
+                <p class="text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug! Yes, you can
+                    run unit tests and view the results directly within the app. </p>
+                <button class="btn px-6 rounded-full bg-[#797DFC] border-none text-white">Registered Now</button>
+            </div>
+            <div>
+                <img src="images/joinforum.png" alt="">
+            </div>
+        </section>
+        <section>
+            <div class="text-center space-y-5 mb-10">
+                <h1 class="text-4xl font-bold">Latest Posts</h1>
+                <p>Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                    features allow for a streamlined .</p>
+            </div>
+            <div id="post-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- <div class="p-6 space-y-4 w-[380px] border rounded-3xl">
+                    <img class="rounded-3xl" src="https://i.ibb.co/VYGSkLz/pexels-jeshootscom-442576.jpg" alt="">
+                    <p>29 January 2024</p>
+                    <h3 class="font-bold">What will a mars habitat force that impact in our daily life!!!</h3>
+                    <p>Yes, you can run unit tests and view the results directly within the app.</p>
+                    <div class="flex gap-4">
+                        <img class="w-12 rounded-full"
+                            src="https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg">
+                        <div>
+                            <h3 class="font-semibold">Cameron Williamson</h3>
+                            <p>Unknown</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+    <footer class="footer footer-center bg-[#F3F3F5FF] py-14">
+        <aside class="max-w-[600px]">
+            <p class="font-bold text-4xl">ReTro</p>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                Latin literature from 45 BC</p>
+        </aside>
+        <nav>
+            <div class="grid grid-flow-col gap-4">
+                <a>
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </nav>
+        <hr class="border-dashed">
+        <p>2017, All Rights Reserved.</p>
+    </footer>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
